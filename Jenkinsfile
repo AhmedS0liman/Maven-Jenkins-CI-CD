@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker stack deploy -c ./compose/docker-compose.yml maven-cicd'
             }
         }
     }
